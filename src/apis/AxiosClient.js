@@ -1,7 +1,8 @@
 import axios from "axios";
 import { TOKEN_KEY } from "../constants";
 
-const BASE_URL = "http://139.59.244.105:8000";
+const BASE_URL = process.env === 'PRODUCTION' ? "http://139.59.244.105:8000" : 'http://localhost:3000';
+
 
 const token = localStorage.getItem(TOKEN_KEY);
 export class AxiosClient {
